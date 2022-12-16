@@ -27,9 +27,16 @@
     <%= f.text_area :body %>
   </div>
   
-  <div class="create-btm"><%= f.submit 'Create book' %></div>
+  <div class="create-btn"><%= f.submit 'Create book' %></div>
 <% end %>
 
+<% @books.each do |book| %>
+  <p><%= image_tag 'no_image.jpg' %></p>
+  <p><%= book.title %></p>
+  <p><%= book.body %></p>
+<% end %>
+
+<!--usersでユーザーだけの投稿を表示させる-->
 <% @books.each do |book| %>
   <% if book.user_id == current_user.id %>
     <p><%= book.title %></p>
