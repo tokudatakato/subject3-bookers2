@@ -1,0 +1,15 @@
+<% if book.errors.any? %>
+<div class="index-error-message">
+  <% if book.errors.count == 1 %>
+    <%= book.errors.count %> error prohibited this obj from being saved:
+  <% else %>
+    <%= book.errors.count %> errors prohibited this obj from being saved:
+  <% end %>
+  
+  <ul class="error-list">
+    <%= book.errors.full_messages.each do |message| %>
+      <li><% message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
