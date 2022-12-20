@@ -1,19 +1,21 @@
-<div class="user_info">
+      <div class="user_info">
         <h2>User info</h2>
-        <%= image_tag user.get_profile_image(100,100) %>
-        <div class="user_name_info">
-          <p>name</p>
-          <%= user.name %>
-        </div>
-        <div class="user_intro_info">
-          <p>introduction</p>
-          <%= user.introduction %>
-        </div>
-      </div>  
+        <div><%= image_tag user.get_profile_image(100,100) %></div>
+          <table>
+            <thead>
+              <tr class="border-top">name</tr>
+              <tr><%= user.name %></tr>
+            </thead>
+            <tbody>
+              <td class="border-top">introduction</td>
+              <td><%= user.introduction %></td>
+            </tbody>
+          </table>
       
         <% if user == current_user %>
-          <p><%= link_to "編集", edit_user_path(user) %></p>
+          <p class="btn"><%= link_to "編集", edit_user_path(user) %></p>
         <% end %>
+      </div>
       
       <%= form_with model: book, method: :post do |f| %>
       <div class="create-book">

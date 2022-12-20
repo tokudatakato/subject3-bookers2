@@ -14,3 +14,6 @@
  *= require_self
  */
 
+table tbody tr td:hover {
+  background-color: gray;
+}
