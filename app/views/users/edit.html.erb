@@ -1,4 +1,4 @@
-<%= render 'template/error', book: @book %>
+<%= render 'template/error', book: @user %>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto mt-3">
@@ -11,6 +11,10 @@
       <div>
         <label for="inputImage">ProfileImage</label><br>
         <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+      </div>
+      <div>
+        <label for="inputImage">Introduction</label><br>
+        <%= f.text_area :introduction, id: "user_introduction" %>
       </div>
       <%= f.submit class: "btn btn-secondary"%>
       <% end %>
